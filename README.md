@@ -1,3 +1,6 @@
+[![Build Status](https://travis-ci.org/kushthedude/CV-BUILDER.svg?branch=master)](https://travis-ci.org/kushthedude/CV-BUILDER) 
+[![Deploy](https://www.herokucdn.com/deploy/button.svg)](https://cvbuilder1.herokuapp.com)
+
 ## Resume Nation
 =============
 
@@ -16,6 +19,13 @@ This is a *CV-Builder* , Made by Kush Trivedi , For software engineering Project
 - Angular.js
 - Angular.js Minimal (For Basic javascript Function)
 - Bootstrap (Basic CSS Layouts)
+
+#### Automation Used
+ 
+- Heroku (One Touch Deployment)
+- Github Pages (gh-pages Deployment)
+- Travis-CI (Travis Build)
+- Codacy Bot (Code - Quality Review)
 
 #### License
 
