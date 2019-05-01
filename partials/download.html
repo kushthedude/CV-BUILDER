@@ -1,0 +1,324 @@
+<div ng-controller="downloadCtrl as downloadList">
+  <div layout-align="center center" layout="row" id="downloadHeader" ng-show="downloadList.noContent<6">
+    <span><md-button class="md-raised md-primary" ng-click="printThis(resumeSelection)" md-colors="{background: 'deep-purple'}" id="btnDownload">Download Resume</md-button></span>
+    <span>
+      <!--<md-radio-group ng-model="resumeSelection" layout="row">
+        <md-radio-button value="Resume1">Flat</md-radio-button>
+        <md-radio-button value="Resume2"> Fancy </md-radio-button>
+      </md-radio-group>-->
+      <md-select ng-model="resumeSelection">
+        <md-option value="Resume1" selected>
+          <em>Flat</em>
+        </md-option>
+        <md-option value="Resume2">
+          <em>Fancy</em>
+        </md-option>
+        <md-option value="Resume3">
+          <em>Stock</em>
+        </md-option>
+      </md-select>
+    </span>
+  </div>
+  <div layout-align="center center" layout="row" ng-show="downloadList.noContent<6">
+    <span class="paddingRight">Line spacing</span>
+    <md-slider-container>
+      <md-slider flex min="0" max="150" ng-model="linespacing" aria-label="red" id="linespacing-slider" ng-change="changeLinespacing()"></md-slider>
+    </md-slider-container>
+  </div>
+  <div id="resume_1" class="ng-scope theme-pacifico" ng-show="resumeSelection == 'Resume1' && downloadList.noContent<6">
+
+    <div class="instaFade centerResume cv1">
+      <div class="mainDetails" ng-show="downloadList.fullname">
+        <div id="name">
+          <h1 class="quickFade delayTwo"><br>{{downloadList.fullname}}</h1>
+        </div>
+
+        <div id="contactDetails" class="quickFade delayFour">
+          <ul>
+            <li ng-show="downloadList.email">e: {{downloadList.email}}</li>
+            <li ng-show="downloadList.website">w: {{downloadList.website}}</li>
+            <li ng-show="downloadList.phonenumber">m: {{downloadList.phonenumber}}</li>
+          </ul>
+        </div>
+        <div class="clear"></div>
+      </div>
+
+      <div id="mainArea" class="quickFade delayFive">
+        <section ng-show="downloadList.summary">
+          <article>
+            <div class="sectionTitle">
+              <h1>Personal Profile</h1>
+            </div>
+
+            <div class="sectionContent">
+              <p>{{downloadList.summary}}</p>
+            </div>
+          </article>
+          <div class="clear"></div>
+        </section>
+
+
+        <section ng-show="downloadList.elem.length">
+          <div class="sectionTitle">
+            <h1>Work Experience</h1>
+          </div>
+
+          <div class="sectionContent">
+            <article ng-repeat="exp in downloadList.elem">
+              <h2>{{exp.role_company}} at {{exp.companyname}}</h2>
+              <p class="subDetails">{{exp.time_period}}</p>
+              <p>{{exp.desc}}</p>
+            </article>
+          </div>
+          <div class="clear"></div>
+        </section>
+
+        <section ng-show="downloadList.projects.length">
+          <div class="sectionTitle">
+            <h1>Projects</h1>
+          </div>
+
+          <div class="sectionContent">
+            <article ng-repeat="project in downloadList.projects">
+              <h2>{{project.title}}</h2>
+              <p class="subDetails" ng-show="project.website">{{project.website}}</p>
+              <p>{{project.desc}}</p>
+            </article>
+          </div>
+          <div class="clear"></div>
+        </section>
+
+        <section ng-show="downloadList.skill.length">
+          <div class="sectionTitle">
+            <h1>Key Skills</h1>
+          </div>
+
+          <div class="sectionContent">
+            <ul class="keySkills">
+              <li ng-repeat="skill in downloadList.skill">{{skill.name}}</li>
+            </ul>
+          </div>
+          <div class="clear"></div>
+        </section>
+
+
+        <section ng-show="downloadList.education.length">
+          <div class="sectionTitle">
+            <h1>Education</h1>
+          </div>
+
+          <div class="sectionContent">
+            <article ng-repeat="education in downloadList.education">
+              <h2>{{education.school_name}}</h2>
+              <p>{{education.degree}}</p>
+              <p class="subDetails">{{education.duration}}</p>
+            </article>
+          </div>
+          <div class="clear"></div>
+        </section>
+
+      </div>
+      </div>
+
+  </div>
+  <div id="resume_2" class="ng-scope theme-pacifico" ng-show="resumeSelection == 'Resume2' && downloadList.noContent<6">
+
+    <div class="instaFade centerResume cv1">
+      <div class="mainDetails_r2" ng-show="downloadList.fullname">
+        <div id="name_r2">
+          <h1 class="quickFade delayTwo">{{downloadList.fullname}}</h1>
+        </div>
+
+        <div id="contactDetails_r3" class="quickFade delayFour">
+          <ul>
+            <li ng-show="downloadList.email"><span class="paddingRight"><strong><i class="material-icons md-body-2">email</i></strong></span><span>{{downloadList.email}}</span></li>
+            <li ng-show="downloadList.website"><span class="paddingRight"><strong><i class="material-icons md-body-2">mouse</i></strong></span><span>{{downloadList.website}}</span></li>
+            <li ng-show="downloadList.phonenumber"><span class="paddingRight"><strong><i class="material-icons md-body-2">phone</i></strong></span><span>{{downloadList.phonenumber}}</span></li>
+
+          </ul>
+        </div>
+        <div class="clear"></div>
+      </div>
+
+      <div id="mainArea" class="quickFade delayFive">
+        <section ng-show="downloadList.summary">
+          <article>
+            <div class="sectionTitle_r2 pdf-header">
+              <h1>Objective</h1>
+            </div>
+
+            <div class="sectionContent">
+              <p>{{downloadList.summary}}</p>
+            </div>
+          </article>
+          <div class="clear"></div>
+        </section>
+
+
+        <section ng-show="downloadList.elem.length">
+          <div class="sectionTitle_r2 pdf-header">
+            <h1>Experience</h1>
+          </div>
+
+          <div class="sectionContent">
+            <article ng-repeat="exp in downloadList.elem">
+              <h2>{{exp.role_company}} at {{exp.companyname}}</h2>
+              <p class="subDetails">{{exp.time_period}}</p>
+              <p>{{exp.desc}}</p>
+            </article>
+          </div>
+          <div class="clear"></div>
+        </section>
+
+        <section ng-show="downloadList.projects.length">
+          <div class="sectionTitle_r2 pdf-header">
+            <h1>Projects</h1>
+          </div>
+
+          <div class="sectionContent">
+            <article ng-repeat="project in downloadList.projects">
+              <h2>{{project.title}}</h2>
+              <p class="subDetails" ng-show="project.website">{{project.website}}</p>
+              <p>{{project.desc}}</p>
+            </article>
+          </div>
+          <div class="clear"></div>
+        </section>
+
+        <section ng-show="downloadList.skill.length">
+          <div class="sectionTitle_r2 pdf-header">
+            <h1>Skills</h1>
+          </div>
+
+          <div class="sectionContent">
+            <ul class="keySkills">
+              <li ng-repeat="skill in downloadList.skill">{{skill.name}}</li>
+            </ul>
+          </div>
+          <div class="clear"></div>
+        </section>
+
+
+        <section ng-show="downloadList.education.length">
+          <div class="sectionTitle_r2 pdf-header">
+            <h1>Education</h1>
+          </div>
+
+          <div class="sectionContent">
+            <article ng-repeat="education in downloadList.education">
+              <h2>{{education.school_name}}</h2>
+              <p>{{education.degree}}</p>
+              <p class="subDetails">{{education.duration}}</p>
+            </article>
+          </div>
+          <div class="clear"></div>
+        </section>
+
+      </div>
+      </div>
+
+  </div>
+  <div id="resume_3" class="ng-scope theme-pacifico" ng-show="resumeSelection == 'Resume3' && downloadList.noContent<6">
+
+    <div class="instaFade centerResume cv1">
+      <div class="mainDetails_r3" ng-show="downloadList.fullname">
+        <div id="name_r3">
+          <h1 class="quickFade delayTwo">{{downloadList.fullname}}</h1>
+        </div>
+
+        <div id="contactDetails_r3" class="quickFade delayFour">
+          <ul>
+            <li ng-show="downloadList.email"><span class="paddingRight"><strong><i class="material-icons md-body-2">email</i></strong></span><span>{{downloadList.email}}</span></li>
+            <li ng-show="downloadList.website"><span class="paddingRight"><strong><i class="material-icons md-body-2">mouse</i></strong></span><span>{{downloadList.website}}</span></li>
+            <li ng-show="downloadList.phonenumber"><span class="paddingRight"><strong><i class="material-icons md-body-2">phone</i></strong></span><span>{{downloadList.phonenumber}}</span></li>
+
+          </ul>
+        </div>
+        <div class="clear"></div>
+      </div>
+
+      <div id="mainArea" class="quickFade delayFive">
+        <section ng-show="downloadList.summary">
+          <article>
+            <div class="sectionTitle_r3">
+              <h1>Objective</h1>
+            </div>
+
+            <div class="sectionContent">
+              <p>{{downloadList.summary}}</p>
+            </div>
+          </article>
+          <div class="clear"></div>
+        </section>
+
+
+        <section ng-show="downloadList.elem.length">
+          <div class="sectionTitle_r3">
+            <h1>Experience</h1>
+          </div>
+
+          <div class="sectionContent">
+            <article ng-repeat="exp in downloadList.elem">
+              <h2>{{exp.role_company}} at {{exp.companyname}}</h2>
+              <p class="subDetails">{{exp.time_period}}</p>
+              <p>{{exp.desc}}</p>
+            </article>
+          </div>
+          <div class="clear"></div>
+        </section>
+
+        <section ng-show="downloadList.projects.length">
+          <div class="sectionTitle_r3">
+            <h1>Projects</h1>
+          </div>
+
+          <div class="sectionContent">
+            <article ng-repeat="project in downloadList.projects">
+              <h2>{{project.title}}</h2>
+              <p class="subDetails" ng-show="project.website">{{project.website}}</p>
+              <p>{{project.desc}}</p>
+            </article>
+          </div>
+          <div class="clear"></div>
+        </section>
+
+        <section ng-show="downloadList.skill.length">
+          <div class="sectionTitle_r3">
+            <h1>Skills</h1>
+          </div>
+
+          <div class="sectionContent">
+            <ul class="keySkills">
+              <li ng-repeat="skill in downloadList.skill">{{skill.name}}</li>
+            </ul>
+          </div>
+          <div class="clear"></div>
+        </section>
+
+
+        <section ng-show="downloadList.education.length">
+          <div class="sectionTitle_r3">
+            <h1>Education</h1>
+          </div>
+
+          <div class="sectionContent">
+            <article ng-repeat="education in downloadList.education">
+              <h2>{{education.school_name}}</h2>
+              <p>{{education.degree}}</p>
+              <p class="subDetails">{{education.duration}}</p>
+            </article>
+          </div>
+          <div class="clear"></div>
+        </section>
+
+      </div>
+      </div>
+
+  </div>
+  <div layout="row" layout-align="center center" ng-show="downloadList.noContent==6">
+    <div class="noContent">
+      <p>Please add some information of yours and check back later.</p>
+      <md-button href="#/summary" class="md-raised md-primary material-cust-medium-button" md-colors="{background: 'green'}">🠄 Start building your Resume</md-button>
+    </div>
+  </div>
+</div>
