@@ -1,3 +1,5 @@
+[![Build Status](https://travis-ci.org/kushthedude/CV-BUILDER.svg?branch=master)](https://travis-ci.org/kushthedude/CV-BUILDER)
+[![Deploy](https://www.herokucdn.com/deploy/button.svg)](https://heroku.com/deploy)
 ## Resume Nation
 =============
 
