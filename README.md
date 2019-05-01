@@ -1,4 +1,7 @@
 ## Resume Nation
+
+[![Codacy Badge](https://api.codacy.com/project/badge/Grade/4fcb86d4acbc489cabb2fb55d30d2cd7)](https://app.codacy.com/app/kushthedude/CV-BUILDER?utm_source=github.com&utm_medium=referral&utm_content=kushthedude/CV-BUILDER&utm_campaign=Badge_Grade_Dashboard)
+
 =============
 
 This is a *CV-Builder* , Made by Kush Trivedi , For software engineering Project .
