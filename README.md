@@ -7,7 +7,7 @@
 
 =============
 
-This is a *CV-Builder* , Made by Kush Trivedi , For software engineering Project .
+This is a *CV-Builder* , Made by Kush Trivedi , For software engineering Project(CS-223) .
 
 #### How To Use
 
