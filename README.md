@@ -3,6 +3,7 @@
 
 [![Codacy Badge](https://api.codacy.com/project/badge/Grade/4fcb86d4acbc489cabb2fb55d30d2cd7)](https://app.codacy.com/app/kushthedude/CV-BUILDER?utm_source=github.com&utm_medium=referral&utm_content=kushthedude/CV-BUILDER&utm_campaign=Badge_Grade_Dashboard)
 [![Build Status](https://travis-ci.org/kushthedude/CV-BUILDER.svg?branch=master)](https://travis-ci.org/kushthedude/CV-BUILDER)
+[![Dependabot Status](https://api.dependabot.com/badges/status?host=github&repo=kushthedude/CV-BUILDER)](https://dependabot.com)
 [![Deploy](https://www.herokucdn.com/deploy/button.svg)](https://heroku.com/deploy)
 
 =============
