@@ -1,12 +1,16 @@
 language: node_js
 node_js:
-  - "9"
+  - "8"
 dist: trusty
-sudo: required
-branches:
-  only:
-  - master
+sudo: false
+
+cache:
+  directories:
+    - node_modules
+
+addons:
+  chrome: stable
 
 script:
-
-- ng build --prod --base-href https://kushthedude.github.io/CV-BUILDER/
+  - npm run build
+  - xvfb-run npm run e2e
