@@ -32,7 +32,7 @@
         "karma-firefox-launcher": "^1.1.0",
         "karma-jasmine": "^2.0.1",
         "karma-junit-reporter": "^1.2.0",
-        "protractor": "^4.0.9"
+        "protractor": "^5.4.2"
     },
     "scripts": {
         "update-deps": "npm update",
