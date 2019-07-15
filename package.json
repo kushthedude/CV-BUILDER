@@ -31,7 +31,7 @@
         "karma-chrome-launcher": "^2.2.0",
         "karma-firefox-launcher": "^1.1.0",
         "karma-jasmine": "^0.3.8",
-        "karma-junit-reporter": "^0.4.1",
+        "karma-junit-reporter": "^1.2.0",
         "protractor": "^4.0.9"
     },
     "scripts": {
