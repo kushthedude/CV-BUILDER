@@ -24,7 +24,7 @@
         "grunt-contrib-htmlmin": "^2.0.0",
         "grunt-contrib-uglify": "^2.0.0",
         "grunt-usemin": "^3.1.1",
-        "html5-boilerplate": "^6.1.0",
+        "html5-boilerplate": "^7.2.0",
         "http-server": "^0.9.0",
         "jasmine-core": "^3.4.0",
         "karma": "^0.13.22",
