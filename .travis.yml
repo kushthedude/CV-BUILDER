@@ -1,16 +1,13 @@
-language: node_js
-node_js:
-  - "9"
-dist: trusty
-sudo: false
+matrix:
+  include:
+    - language: python
+      python: 3.6
+      script:
+      - pip install pipenv
+      - pipenv install
 
-cache:
-  directories:
-    - node_modules
-
-addons:
-  chrome: stable
-
-script:
-  - npm run build
-  - xvfb-run npm run e2e
+    - language: node_js
+      node_js: 
+      - "9"
+      script:
+      - yarn install
